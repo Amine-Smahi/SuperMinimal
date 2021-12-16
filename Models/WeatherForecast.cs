@@ -1,4 +1,6 @@
-namespace WebApplication2.Models;
+using System;
+
+namespace SuperMinimal.Models;
 
 public class WeatherForecast
 {

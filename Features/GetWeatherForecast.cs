@@ -1,10 +1,16 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using WebApplication2.Models;
+﻿using System;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using SuperMinimal.Models;
 
-namespace WebApplication2.Features;
+namespace SuperMinimal.Features;
 using Ardalis.ApiEndpoints;
 
-public class GetWeatherForecast : EndpointBaseAsync.WithoutRequest.WithResult<WeatherForecast[]>
+public class GetWeatherForecast : EndpointBaseAsync
+    .WithoutRequest
+    .WithResult<WeatherForecast[]>
 {
     [HttpPost("api/GetWeatherForecast")]
     public override Task<WeatherForecast[]> HandleAsync(CancellationToken cancellationToken = new())
